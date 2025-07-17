@@ -22,6 +22,7 @@ const bookSchema = new mongoose.Schema({
   },
 
   publishedDate: Date,
+  
   inStock: {
     type: Boolean,
     default: true

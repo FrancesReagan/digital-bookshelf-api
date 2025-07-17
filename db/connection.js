@@ -13,12 +13,4 @@ const connectDB = async () => {
   }
 };
 
-// const uri = process.env.MONGODB_URL;
-// const connection = mongoose.connection;
-
-// mongoose
-//   .connect(uri)
-//   .then(console.log("Connected successfully to MongoDB!"))
-//   .catch((e) => console.log(`Error connecting to MongoDB: ${e}`));
-
   export default connectDB;

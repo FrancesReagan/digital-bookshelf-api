@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Create: POST / - createsa new book using the data in req.body//
+// Create: POST / - creates a new book using the data in req.body//
 router.post("/", async (req,res) => {
   try {
     const newBook = await Book.create(req.body)
@@ -29,8 +29,29 @@ router.post("/", async (req,res) => {
 // Read One: GET /:id - retrieves a single book by its _id//
 router.get("/:id", async(req,res) => {
   try {
-    const book = await Book.findById(req.params.id)
+    const book = await Book.findById(req.params.id);
+    if(!book) {
+      return res.status(404).json({error: "Book not found"});
+    }
     res.json(book)
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({error: error.message})
+  }
+});
+
+//PUT  /:id -updtes a book by its id
+router.put("/:id", async (req,res)=> {
+  try {
+    const updated = await Book.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
+    if(!updated) {
+      return res.status(404).json({ error: "Book not found to update"});
+    }
+    res.json(updated)
   } catch (error) {
     console.error(error);
     res.status(500).json({error: error.message})
@@ -48,15 +69,6 @@ router.delete("/:id", async (req,res)=> {
   }
 })
 
-router.put("/:id", async (req,res)=> {
-  try {
-    const updated = await Book.findByIdAndUpdate(req.params.id, req.body)
-    res.json(updated)
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({error: error.message})
-  }
-})
 
 
 
@@ -81,4 +93,4 @@ router.post('/:id/like', async (req, res) => {
 });
 
   
-export default rout
+export default router
