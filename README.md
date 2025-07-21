@@ -97,6 +97,24 @@ then in the `body`, `raw`, `JSON` type:
 }
 
 ----------------------------------------------
+_Project structure_
+<img width="135" height="273" alt="image" src="https://github.com/user-attachments/assets/9e59ac44-99b9-480f-90ac-b9e1ab3733be" />
+
+---------------------------------------------------
+
+_Tech Used_
+*Node.js - runtime environment
+*Express.js - web framework
+*MongoDB - database
+*Mongoose - mongoDB object modeling
+*dotenv - environment variable management
+
+_Error Handling_
+*The API includes error handling:
+ -400: Bad Request (validation errors)
+ -404: Resource Not Found
+ -500: Internal Server Error
+
 
 
 
