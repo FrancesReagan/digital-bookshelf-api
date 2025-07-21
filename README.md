@@ -21,7 +21,82 @@ Set up env variables --create `.env` file:
 Start the server
 `npm run dev`
 
+---------------------------------------------------------------------------
+`API ENDPOINTS`
+`BOOKS`
+method: GET
+endpoint: /api/books
+description: get all books
 
+method: GET
+endpoint: /api/books/:id 
+description: get book by ID
+
+method: POST
+endpoint: /api/books
+description: create a new book
+
+method: PUT
+endpoint: /api/books/:id 
+description: update the book
+
+method: DELETE
+endpoint: /api/books/:id 
+description: delete a book
+
+method: POST
+endpoint: /api/books/:id/like
+description: like a book
+
+-----------------------------------------------
+`USERS`
+method: GET
+endpoint: /api/user/:id 
+description: get a user by ID
+
+method: POST
+endpoint: /api/user
+description: create new user
+
+method: POST
+endpoint: /api/user/:userId/reviews/bookId
+description: add a book review
+
+method: POST
+endpoint: /api/user/:userId/likes/:bookId
+description: add a book to user's likes
+
+--------------------------------------
+Example:
+Book Schema
+In `Postman` create a new HTTP Request
+`POST` 
+localhost:3000/api/books
+then go to `body`, `raw`, `JSON`
+type in the body: 
+{
+   "title": "The Great Gatsby",
+   "author": "F.Scott Fitzgerald",
+   "isbn": "9780743273565",
+   "publishedDate": "1925-04-10"
+}
+
+-----------------
+GET all books
+/api/books 
+get a book id
+
+--------------------
+Update a book:
+
+`PUT` request 
+/api/books/book_id_here
+then in the `body`, `raw`, `JSON` type:
+{
+  "inStock": false
+}
+
+----------------------------------------------
 
 
 
