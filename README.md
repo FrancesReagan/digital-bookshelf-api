@@ -1,3 +1,32 @@
+__Digital Bookshelf API__
+A RESTful API for managing a digital bookshelf inventory, built with Node.js, Express, and MongoDB.
+
+_Features_
+*full Create Read Update Delete operation for books listed
+*User Management with reviews and likes
+*Input validation and error handling
+*MongoDB integration with Mongoose
+
+_Install_
+*git clone <repo url>
+*cd digital-bookshelf-api
+
+install dependencies
+*npm i express, mongoose, dotenv, nodemon
+
+Set up env variables --create `.env` file:
+`MONGODB_URL or URI =your_mongodb_connection_string`
+`PORT = 3000`
+
+Start the server
+`npm run dev`
+
+
+
+
+
+
+
 __Reflections__
 1. Why is it beneficial to separate routes, models, and database connection into different directories?
    This practice enables each part to have a single responsiblity---i.e. "Separation of concerns"
